@@ -1,0 +1,230 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <script type='text/javascript' src='jquery.min.js'></script>
+    <script type="text/javascript">
+    <!--
+        var unityObjectUrl = "UnityObject2.js";
+        if (document.location.protocol == 'https:')
+            unityObjectUrl = unityObjectUrl.replace("http://", "https://ssl-");
+        document.write('<script type="text\/javascript" src="' + unityObjectUrl + '"><\/script>');
+        -->
+    </script>
+
+    <script type="text/javascript">
+        <!--
+            var config = {
+                width: 992, 
+                height: 558,
+                params: { enableDebugging:"0" }
+                
+            };
+            var u = new UnityObject2(config);
+            
+            jQuery(function() {
+
+                var $missingScreen = jQuery("#unityPlayer").find(".missing");
+                var $brokenScreen = jQuery("#unityPlayer").find(".broken");
+                $missingScreen.hide();
+                $brokenScreen.hide();
+
+                u.observeProgress(function (progress) {
+                    switch(progress.pluginStatus) {
+                        case "broken":
+                            $brokenScreen.find("a").click(function (e) {
+                                e.stopPropagation();
+                                e.preventDefault();
+                                u.installPlugin();
+                                return false;
+                            });
+                            $brokenScreen.show();
+                        break;
+                        case "missing":
+                            $missingScreen.find("a").click(function (e) {
+                                e.stopPropagation();
+                                e.preventDefault();
+                                u.installPlugin();
+                                return false;
+                            });
+                            $missingScreen.show();
+                        break;
+                        case "installed":
+                            $missingScreen.remove();
+                        break;
+                        case "first":
+                        break;
+                    }
+                });
+                u.initPlugin(jQuery("#unityPlayer")[0], "WebDeployment.unity3d");
+            });
+        -->
+        </script>
+
+        <style type="text/css">
+        <!--
+        div.content {
+            margin: auto;
+            width: 992px;
+        }
+        div.broken,
+        div.missing {
+            margin: auto;
+            position: relative;
+            top: 50%;
+            width: 193px;
+        }
+        div.broken a,
+        div.missing a {
+            height: 63px;
+            position: relative;
+            top: -31px;
+        }
+        div.broken img,
+        div.missing img {
+            border-width: 0px;
+        }
+        div.broken {
+            display: none;
+        }
+        div#unityPlayer {
+            cursor: default;
+            height: 558px;
+            width: 992px;
+        }
+        -->
+        </style>
+
+    <title>Rough Beak Games Poke the Owl Christmas</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS --> 
+    <link href="css/small-business.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+    <script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.0";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">
+                    <img src="./images/LogoSmall.png" alt="Image of Company Logo Small" href="index.html">
+                </a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="profile.html">Profile</a>
+                    </li>
+                    <li>
+                        <a href="DevTime.html">Development Timeline</a>
+                    </li>
+                    <li>
+                        <a href="Contact.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container">
+        <div class="row">
+            <center>
+            <div class="col-md-4">
+                <h1>Poke the Owl Christmas!</h1>
+                <p>Merry Christmas 2014 everybody! Sorry this is the reason why nobody is getting presents from me this year!</p>
+            </div>
+
+            <div class="col-md-4">
+                <h1>Some background</h1>
+                <p>Trying to pull a quick turnaround due to this time of year being very busy due to assignments, this won't be fully polished, so any lingering oddities, just ignore them.</p>
+            </div>
+        </center>
+            <!-- /.col-md-4 -->
+        </div>
+        <!-- /.row -->
+        <hr>
+
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="well text-center">
+                    Rough Beak Games. Rapid Ascent.
+                </div>
+                <div class="fb-like" data-href="https://www.facebook.com/RoughBeakGames" data-layout="standard" data-action="like" data-show-faces="false" data-share="true"></div>
+            </div>
+            <!-- /.col-lg-12 -->
+        </div>
+        <!-- /.row -->
+
+<!-- Content Row -->
+        <div class="row">
+            <div class="col-md-4">
+        <div class="content">
+            <div id="unityPlayer">
+                <div class="missing">
+                    <a href="http://unity3d.com/webplayer/" title="Unity Web Player. Install now!">
+                        <img alt="Unity Web Player. Install now!" src="http://webplayer.unity3d.com/installation/getunity.png" width="193" height="63" />
+                    </a>
+                </div>
+            </div>
+        </div>
+        <p class="footer">&laquo; created with <a href="http://unity3d.com/unity/" title="Go to unity3d.com">Unity</a> &raquo;</p>
+            </div>
+
+
+        <!-- Footer -->
+        <footer>
+            <div class="row">
+                <div class="col-lg-12">
+                    <p>Copyright &copy; Rough Beak Games 2014</p>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+    <!-- /.container -->
+
+    <!-- jQuery Version 1.11.0 -->
+    <script src="js/jquery-1.11.0.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+</body>
+
+</html>
