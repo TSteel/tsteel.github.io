@@ -9,63 +9,6 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <script type='text/javascript' src='jquery.min.js'></script>
-    <script type="text/javascript">
-    <!--
-        var unityObjectUrl = "UnityObject2.js";
-        if (document.location.protocol == 'https:')
-            unityObjectUrl = unityObjectUrl.replace("http://", "https://ssl-");
-        document.write('<script type="text\/javascript" src="' + unityObjectUrl + '"><\/script>');
-        -->
-    </script>
-
-    <script type="text/javascript">
-        <!--
-            var config = {
-                width: 992, 
-                height: 558,
-                params: { enableDebugging:"0" }
-                
-            };
-            var u = new UnityObject2(config);
-            
-            jQuery(function() {
-
-                var $missingScreen = jQuery("#unityPlayer").find(".missing");
-                var $brokenScreen = jQuery("#unityPlayer").find(".broken");
-                $missingScreen.hide();
-                $brokenScreen.hide();
-
-                u.observeProgress(function (progress) {
-                    switch(progress.pluginStatus) {
-                        case "broken":
-                            $brokenScreen.find("a").click(function (e) {
-                                e.stopPropagation();
-                                e.preventDefault();
-                                u.installPlugin();
-                                return false;
-                            });
-                            $brokenScreen.show();
-                        break;
-                        case "missing":
-                            $missingScreen.find("a").click(function (e) {
-                                e.stopPropagation();
-                                e.preventDefault();
-                                u.installPlugin();
-                                return false;
-                            });
-                            $missingScreen.show();
-                        break;
-                        case "installed":
-                            $missingScreen.remove();
-                        break;
-                        case "first":
-                        break;
-                    }
-                });
-                u.initPlugin(jQuery("#unityPlayer")[0], "WebDeployment.unity3d");
-            });
-        -->
-        </script>
 
         <style type="text/css">
         <!--
@@ -106,7 +49,7 @@
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- Custom CSS --> 
+    <!-- Custom CSS -->
     <link href="css/small-business.css" rel="stylesheet">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -167,12 +110,12 @@
             <center>
             <div class="col-md-4">
                 <h1>Poke the Owl Christmas!</h1>
-                <p>Happy Holidays 2014 everyone! You will need the unity plugin to play here. Else you can download and play.</p>
+                <p>Happy Holidays 2014 everyone! You can download and play.</p>
             </div>
 
             <div class="col-md-4">
                 <h1>Some background</h1>
-                <p>This was pulled together whilst assignments began to pick up, as such this isn't super polished, there shouldn't be anything that will out right break, but some parts may look slightly werid.</p>
+                <p>This was never intended to be a full game, but rather a little something to tick over for Christmas. Left as a rather short coding experiment.</p>
             </div>
             <div class="col-md-4">
                 <h1>Downloads</h1>
@@ -197,26 +140,11 @@
         </div>
         <!-- /.row -->
 
-<!-- Content Row -->
-        <div class="row">
-            <div class="col-md-4">
-        <div class="content">
-            <div id="unityPlayer">
-                <div class="missing">
-                    <a href="http://unity3d.com/webplayer/" title="Unity Web Player. Install now!">
-                        <img alt="Unity Web Player. Install now!" src="http://webplayer.unity3d.com/installation/getunity.png" width="193" height="63" />
-                    </a>
-                </div>
-            </div>
-        </div>
-        <p class="footer">&laquo; created with <a href="http://unity3d.com/unity/" title="Go to unity3d.com">Unity</a> &raquo;</p>
-            </div>
-
         <!-- Footer -->
         <footer>
             <div class="row">
                 <div class="col-lg-12">
-                    <p>Copyright &copy; Rough Beak Games 2014</p>
+                    <p>Copyright &copy; Rough Beak Games 2014-2015</p>
                 </div>
             </div>
         </footer>
